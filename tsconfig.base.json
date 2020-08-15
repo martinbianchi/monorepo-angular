@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@lemon/data": ["libs/data/src/index.ts"]
+      "@lemon/data": ["libs/data/src/index.ts"],
+      "@lemon/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
