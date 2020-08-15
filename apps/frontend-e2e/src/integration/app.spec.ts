@@ -1,4 +1,4 @@
-import { getGreeting } from '../support/app.po';
+import { getGreeting, getAddTodoButton, getTodos } from '../support/app.po';
 
 describe('frontend', () => {
   beforeEach(() => cy.visit('/'));
@@ -10,4 +10,10 @@ describe('frontend', () => {
     // Function helper example, see `../support/app.po.ts` file
     getGreeting().contains('Welcome to frontend!');
   });
+
+  it('should display todos', () => {
+    getTodos().should((t) => expect(t.length).equal(2));
+    getAddTodoButton().click();
+    getTodos().should((t) => expect(t.length).equal(3));
+  })
 });
