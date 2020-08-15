@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Todo } from '@lemon/data';
 
-interface Todo {
-  title: string;
-}
 @Component({
   selector: 'lemon-root',
   templateUrl: './app.component.html',
@@ -22,8 +20,8 @@ export class AppComponent {
   }
 
   addTodo = () => {
-    this.todos.push({
-      title: `New todo ${Math.floor(Math.random() * 1000)}`,
+    this.http.post('/api/addTodo', {}).subscribe(() => {
+      this.fetch();
     });
   }
 }

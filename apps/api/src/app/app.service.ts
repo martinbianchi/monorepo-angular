@@ -1,12 +1,9 @@
 import { Injectable } from '@nestjs/common';
-
-interface Todo {
-  title: string;
-}
+import { Todo } from '@lemon/data';
 
 @Injectable()
 export class AppService {
-  todos: Todo[] = [{ title: 'Todo 11' }, { title: 'Todo 2' }];
+  todos: Todo[] = [{ title: 'Todo 1' }, { title: 'Todo 2' }];
 
   getData = (): Todo[] => {
     return this.todos;
